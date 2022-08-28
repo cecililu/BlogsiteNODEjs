@@ -18,10 +18,10 @@ const createBlog = async (req, res) => {
       });
 
     const blog = await blogObj.save();
-    
-    res.status(201).send({
-        data: blog,
-      });
+    res.redirect('/allblogs')
+    // res.status(201).send({
+    //     data: blog,
+    //   });
   
     } catch (e) {
       res.status(400).send({

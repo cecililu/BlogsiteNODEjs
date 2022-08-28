@@ -13,10 +13,10 @@ const updateBlog = async (req, res) => {
     blog.body = body || blog.body;
   
     const updatedBlog= await blog.save()
-    res.render('/allblogs')
-    res.status(200).send({
-      data: updatedBlog,
-    });
+    res.redirect('/allblogs')
+    // res.status(200).send({
+    //   data: updatedBlog,
+    // });
   } catch (e) {
     res.status(400).send({
       data: e.message ? e.message : "Failed to get blogs",

@@ -9,20 +9,19 @@ const app = express();
 
 const bodyParser = require("body-parser");
 const getAllBlogs = require("./controllers/blog/get");
-
+require('dotenv').config()
 const { get } = require("http");
 const getOne = require("./controllers/blog/get-one");
 const deleteBlog = require("./controllers/blog/delete");
 
-const PORT = process.env.PORT || 8000;
 const staticPath = path.join(__dirname, "../public");
 app.use(express.static(staticPath));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"))
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended:false}))
-
+app.use(bodyParser.urlencoded({ extended:false }))
 app.use("/api/v1", indexRouter);
+const PORT = process.env.PORT || 8000;
 
 app.get("/allblogs", async(req, res) => {
   const blogs=  await getAllBlogs()
@@ -41,9 +40,9 @@ app.get("/:id",async(req, res) => {
   res.render("read.ejs",{ blog:blog});
 });
 
-app.get("/delete/:id",deleteBlog);
+app.get( "/delete/:id", deleteBlog);
 
-app.get("/edit/:id",async(req,res)=>{
+app.get( "/edit/:id" ,async(req,res)=>{
 
   const { id } = req.params;
   const blogs= await  getOne(id);

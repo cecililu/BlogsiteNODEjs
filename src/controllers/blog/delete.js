@@ -6,12 +6,13 @@ const deleteBlog = async (req, res) => {
     const { id } = req.params;
     console.log(id)
     const deletedValue = await Blog.findByIdAndDelete(id);
-
+ 
     if (!deletedValue) {
       return res.status(400).send({
         message: `${id} -  blog not found`,
       });
-    }else{
+    }else{ 
+      console.log('delete sucessful;')
       res.redirect('/allblogs')
     }
 
