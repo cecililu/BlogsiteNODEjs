@@ -13,13 +13,19 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../public/style.css"/>
-    <title>Create a new Blog</title>
+    <title>Blog Home page</title>
   </head>
   <body>
     <%- include ('_navbar') %>
-    <h1 class="m-auto px-3 py-3"><center>Create a new Blog</center></h1>
-       
-    <%- include ('_form') %>
+    <div class="card p-5 m-5">
+        <div class="m-auto justify-center ">
+        <h2 class=" m-auto"><%=blog.title %></h2>
+        <h5 class="card-subtitle text-muted m-auto"><%=blog.author %></h5>
+        <h6 class="card-subtitle text-muted m-auto mb-4"><%=blog.createdAt %></h6>
+        </div>
+        <div class="card-content  m-auto"><%= blog.body %></div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
     crossorigin="anonymous"></script>
@@ -27,15 +33,3 @@
 </html>
 
 
-
-<!-- React Js Dashboard
-Normal Full Stack
-
-
-Testing GraphyQl
-
-
-Mongodb Aggregration
-
-
-Hosting AWS , heroku -->

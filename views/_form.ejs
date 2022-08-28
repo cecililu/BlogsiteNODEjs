@@ -1,0 +1,35 @@
+<div class="form-control " >
+    <div class="card-content mt-4 mx-5 pd-4">
+    <form action="/api/v1/blogs" method="post">
+    <div class="input-group mb-3">
+      <label for="title" class="mx-2"> Enter the title of your Blog :</label> 
+      <input
+        required
+        type="text"
+        id="title"
+        name="title"
+        class="form-control"
+        placeholder="Enter Blog Title"
+        aria-label="Blog Title"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="input-group mb-3">
+    <label for="body" class="mx-2">Enter Blog Body  :</label> 
+      <textarea rows="10"  style="height:100%"
+        id="body"
+        required
+        name="body"
+        class="form-control"
+        placeholder="Enter Blog Body"
+        id="floatingTextarea2"
+        style="height: 100px"
+      ></textarea>
+    </div>
+  <center>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="button" class="btn btn-secondary">Cancel</button>
+  </center>
+  </form>
+  </div>
+  </div>
