@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended:false }))
 app.use("/api/v1", indexRouter);
 const PORT = process.env.PORT || 8000;
 
-app.get("/", async(req, res) => {
+app.get("/allblogs", async(req, res) => {
   const blogs=  await getAllBlogs()
   res.render('main', { articles: blogs} );
 });
