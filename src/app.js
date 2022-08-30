@@ -10,7 +10,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const getAllBlogs = require("./controllers/blog/get");
 require('dotenv').config()
-const { get } = require("http");
+// const { get } = require("http");
 const getOne = require("./controllers/blog/get-one");
 const deleteBlog = require("./controllers/blog/delete");
 
